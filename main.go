@@ -5,7 +5,6 @@ import (
 	"os"
 
 	"github.com/hostdio/webhookd/httpapi"
-	_ "github.com/lib/pq"
 )
 
 var (

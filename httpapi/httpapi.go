@@ -53,7 +53,7 @@ func Cmd(postgresConnString string) error {
 	}
 
 	r.HandleFunc("/", GetList(db)).Methods("GET")
-	// r.HandleFunc("/{id}", GetOne(db)).Methods("GET").Name("GET_ONE_WEBHOOK")
+	r.HandleFunc("/{id}", GetOne(db)).Methods("GET").Name("GET_ONE_WEBHOOK")
 	r.HandleFunc("/", Insert(db, r)).Methods("POST")
 
 	return http.ListenAndServe(":8080", r)
